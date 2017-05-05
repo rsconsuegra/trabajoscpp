@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctime>
 #include <iomanip>
+#pragma warning(disable : 4996)
 using namespace std;
 
 string nombre_producto[100],tem;
@@ -11,7 +12,7 @@ bool dia=true,sw;
 
 int main() {
 
-/*  	cout << "Antes de iniciar, Ingrese productos por favor."<<endl;
+  	cout << "Antes de iniciar, Ingrese productos por favor."<<endl;
     cout << "Leer producto # "<< n+1 <<endl;
 
     while (getline(cin,tem)){
@@ -21,12 +22,12 @@ int main() {
   		cout <<"Digite cantidad del Producto"<<endl;
   		cin  >> cantidad_producto[n];
   		cin.ignore();
-  		cout << "Se han añadido "<< cantidad_producto[n] <<" unidades de "<< nombre_producto[n]<<" al inventario."<< endl;
+  		cout << "Se han aÃ±adido "<< cantidad_producto[n] <<" unidades de "<< nombre_producto[n]<<" al inventario."<< endl;
         n++;
         cout << "Leer producto # "<< n+1 << " O deje el espacio en blanco para finalizar"<<endl;
   	}
-*/
-    nombre_producto[0]="Lana";
+
+/*    nombre_producto[0]="Lana";
     nombre_producto[1]="Varilla";
     nombre_producto[2]="Cemento";
     nombre_producto[3]="Losas";
@@ -34,7 +35,7 @@ int main() {
     cantidad_producto[1]=5;
     cantidad_producto[2]=34;
     cantidad_producto[3]=23;
-    n=4;
+    n=4;*/
   	system("cls");
     d=0;
     time_t t = time(0);   // get time now
@@ -51,12 +52,12 @@ int main() {
         cout << "1. Listar Productos."<<endl;
         cout << "2. Ingresar Nuevos Productos."<<endl;
         cout << "3. Reportar Compra de Productos en inventario."<<endl;
-        cout << "4. Reportar Devolución de Productos en inventario."<<endl;
+        cout << "4. Reportar DevoluciÃ³n de Productos en inventario."<<endl;
         cout << "5. Reportar Venta de Productos en inventario."<<endl;
         cout << "6. Finalizar dia."<<endl;
         cout << "7. Salir del inventario."<<endl;
 
-        cout << "Digite la opción deseada."<<endl;
+        cout << "Digite la opciÃ³n deseada."<<endl;
         cin  >> op;
 
         switch (op){
@@ -74,20 +75,20 @@ int main() {
             cout <<"Digite Cantidad:"<<endl;
             cin  >> cantidad_producto[n];
             n++;
-            cout <<"Producto añadido de manera exitosa"<<endl;
+            cout <<"Producto aÃ±adido de manera exitosa"<<endl;
             break;
         case 3:
             system("cls");
             sw=true;
             while (sw){
-                cout <<"Digite el codigo del producto que se compró:"<<endl;
+                cout <<"Digite el codigo del producto que se comprÃ³:"<<endl;
                 cin  >>cod;
                 cout <<"Digite la cantidad del producto:"<<endl;
                 cin  >> cant;
                 cantidad_producto[cod-1] += cant;
                 compra_dia[d][cod-1]     += cant;
-                cout <<"Se han añadido "<<cant<< " unidades de "<<nombre_producto[cod-1]<<" exitosamente."<<endl;
-                cout <<"¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
+                cout <<"Se han aÃ±adido "<<cant<< " unidades de "<<nombre_producto[cod-1]<<" exitosamente."<<endl;
+                cout <<"Â¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
                 cin  >>cont;
                 if(cont!=0){sw=false;}
             }
@@ -109,7 +110,7 @@ int main() {
                 }else{
                     cout <<"ERROR: La cantidad de producto ingresado es mayor a la del inventario"<<endl;
                 }
-                cout <<"¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
+                cout <<"Â¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
                 cin  >>cont;
                 if(cont!=0){sw=false;}
             }
@@ -131,7 +132,7 @@ int main() {
                 }else{
                     cout <<"ERROR: La cantidad de producto a vendido es mayor a la del inventario"<<endl;
                 }
-                cout <<"¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
+                cout <<"Â¿Desea continuar? 0 para contiunar, 1 para salir."<<endl;
                 cin  >>cont;
                 if(cont!=0){sw=false;}
             }
